@@ -1,0 +1,16 @@
+﻿.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+node_modules/
+dist/
+build/
+coverage/
+.target/
+target/
+*.iml
