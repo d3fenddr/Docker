@@ -1,0 +1,17 @@
+services:
+  weather-api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5210:8080"
+  weather-client:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5175:80"
+    depends_on:
+      - weather-api
+
+
