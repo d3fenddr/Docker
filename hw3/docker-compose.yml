@@ -1,0 +1,24 @@
+services:
+  orders-api:
+    build:
+      context: ./orders-api
+      dockerfile: Dockerfile
+    ports:
+      - "5310:8080"
+  customers-api:
+    build:
+      context: ./customers-api
+      dockerfile: Dockerfile
+    ports:
+      - "5320:8080"
+  microservices-client:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5330:80"
+    depends_on:
+      - orders-api
+      - customers-api
+
+

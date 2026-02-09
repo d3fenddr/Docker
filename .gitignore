@@ -14,3 +14,5 @@ coverage/
 .target/
 target/
 *.iml
+bin/
+obj/
