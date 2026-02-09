@@ -1,0 +1,15 @@
+FROM node:20-alpine AS build
+WORKDIR /app
+RUN apk add --no-cache git
+RUN git clone https://github.com/d3fenddr/RestaurantApp.git .
+WORKDIR /app/restaurant-client
+RUN npm install
+RUN npm run build
+
+FROM nginx:alpine AS final
+WORKDIR /usr/share/nginx/html
+RUN rm -rf ./*
+COPY --from=build /app/restaurant-client/dist .
+EXPOSE 80
+
+
