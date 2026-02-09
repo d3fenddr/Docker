@@ -6,7 +6,7 @@ function App() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("http://weather-api:8080/api/WeatherForecast")
+    fetch("http://localhost:5210/api/WeatherForecast")
       .then((r) => {
         if (!r.ok) {
           throw new Error("Request failed");
